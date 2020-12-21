@@ -1,19 +1,15 @@
-# How to run in docker containers
-
 ## Why should you use this docker images?
 
 * If you do not want to install all software needed for the Polyploids Training Workshop
 * Run every software via RStudio in your browser
 * Use cluster to run the workshop analysis
 
-## Where will you run the Workshop analysis?
+## Where will you run the analysis?
 
-* [Linux system personal computer](#linux-system-personal-computer)
-* [Access linux cluster with linux personal computer]()
-* [Windows system in personal computer]()
-* [Access linux cluster with windows personal computer]()
+* [Personal computer with Linux](#linux-system-personal-computer)
+* [Personal computer with Windows]()
 * [Mac system personal computer]()
-* [Access linux cluster with mac personal computer]()
+* [Cluster with Linux]()
 
 ## Linux system personal computer
 
