@@ -8,7 +8,7 @@
 
 * [Personal computer with Linux](#linux-system-personal-computer)
 * [Personal computer with Windows]()
-* [Mac system personal computer]()
+* [Personal computer with Mac]()
 * [Cluster with Linux]()
 
 ## Linux system personal computer
@@ -33,7 +33,7 @@ Use this instructions to install docker for [ubuntu](https://docs.docker.com/eng
 
 ```{bash, eval=FALSE}
 # Use VCF2SM
-docker run -v $(pwd):/opt cristaniguti/poly_genocalls python /scripts/vcf2sm/VCF2SM.py -i /opt/example.vcf -o NewPlusOldCalls.headed_poly.vcf -S /scripts/supermassa/src/SuperMASSA.py -I hw -a RA/AA -r 1:84 -d 15 -D 500 -M 4:6 -f 4 -p 0.80 -n 0.90 -c 0.75 -t 1
+docker run -v $(pwd):/opt cristaniguti/poly_genocalls python /scripts/vcf2sm/VCF2SM.py -i /opt/example.vcf -o /opt/NewPlusOldCalls.headed_poly.vcf -S /scripts/supermassa/src/SuperMASSA.py -I hw -a RA/AA -r 1:84 -d 15 -D 500 -M 4:6 -f 4 -p 0.80 -n 0.90 -c 0.75 -t 1
 
 # Access the RStudio
 docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_genocalls
