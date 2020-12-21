@@ -32,13 +32,13 @@ All images will run on top of your OS kernel, so they are cross-platform enabled
 
 ## Installing Docker
 
-**Linux users:** use the following instructions to install Docker on [Ubuntu](https://docs.docker.com/engine/install/ubuntu/), or find your distribution [here](https://docs.docker.com/engine/install/).
+**Linux users:** use the following instructions to [Install Docker on Ubuntu](https://docs.docker.com/engine/install/ubuntu/), or find your distribution [here](https://docs.docker.com/engine/install/).
 
 **Windows users:** download the [Docker Desktop Installer for Windows](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe) and follow the [Installation instructions for Windows](https://docs.docker.com/docker-for-windows/install/).
 
 **Mac users:** download the [Docker Desktop Installer for Mac](https://desktop.docker.com/mac/stable/Docker.dmg) and follow the [Installation instructions for Mac](https://docs.docker.com/docker-for-mac/install/).
 
-**Cluster users**: most computing clusters already have Docker and/or Singularity installed, so you can just jump to the next session, download and run the images. If your cluster does not have any image rendering system, please contact your system's administrator.
+**Cluster users**: most computing clusters already have Docker or Singularity installed - you can jump to the next session, download and run the images. If your cluster does not have any image rendering system, please contact your system administrator.
 
 ## Genotype calling software
 
@@ -69,14 +69,19 @@ docker run -v $(pwd):/opt cristaniguti/poly_genocalls python /scripts/vcf2sm/VCF
 docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_genocalls
 ```
 
-Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. Feel free to choose another port different than 8787. You can also run the VCF2SM using the RStudio terminal, just do not forget the path of the scripts inside the container: `/scripts/SuperMASSA.py` and `/scripts/VCF2SM.py`.
+Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. Feel free to choose another port different than 8787. You can also run the VCF2SM using the RStudio terminal, but do not forget the path of the scripts inside the container: `/scripts/SuperMASSA.py` and `/scripts/VCF2SM.py`.
+
+**Warning:** container images can be large depending on their content. If you do not plan to use the images soon and want to free up some storage space, please open a terminal and run `rm -rf poly_genocalls`.
 
 ## Linkage Mapping and Haplotype Reconstruction
 
+* Docker Hub image: [cristaniguti/poly_maphaplo](https://hub.docker.com/repository/docker/cristaniguti/poly_maphaplo)
+
 ### Image contents
 
-* R
-* RStudio
+* Ubuntu 20.04
+* R 4.0.3
+* RStudio 1.3
 * Julia
 * MAPpoly
 * polymapR
@@ -84,22 +89,37 @@ Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1
 
 ### Running instructions
 
+**Download the container image:** open a terminal and run: `docker pull cristaniguti/poly_maphaplo`
+
+Then start the image by running the following commands:
+
 ```{bash, eval=FALSE}
 
 ```
 
+**Warning:** container images can be large depending on their content. If you do not plan to use the images soon and want to free up some storage space, please open a terminal and run `rm -rf poly_maphaplo`.
+
 ## QTL mapping
+
+* Docker Hub image: [cristaniguti/poly_qtlmap](https://hub.docker.com/repository/docker/cristaniguti/poly_qtlmap)
 
 ### Image contents
 
-* R
-* RStudio
+* Ubuntu 20.04
+* R 4.0.3
+* RStudio 1.3
 * QTLpoly
 * diaQTL
 * GWASpoly
 
 ### Running instructions
 
+**Download the container image:** open a terminal and run: `docker pull cristaniguti/poly_qtlmap`
+
+Then start the image by running the following commands:
+
 ```{bash, eval=FALSE}
 
 ```
+
+**Warning:** container images can be large depending on their content. If you do not plan to use the images soon and want to free up some storage space, please open a terminal and run `rm -rf poly_qtlmap`.
