@@ -23,13 +23,6 @@ All images will run on top of your OS kernel, so they are cross-platform enabled
     * [diaQTL]()
     * [GWASpoly]()
 
-* Instructions for running the images on the following platforms:
-
-    * [Personal computer with Linux]()
-    * [Personal computer with Windows]()
-    * [Personal computer with Mac]()
-    * [Cluster with Linux]()
-
 ## Installing Docker
 
 **Linux users:** use the following instructions to [Install Docker on Ubuntu](https://docs.docker.com/engine/install/ubuntu/), or find your distribution [here](https://docs.docker.com/engine/install/).
@@ -53,13 +46,13 @@ docker run                                # run a command in a new container
 docker run -it -v                         # run in a interactive mode and transferring directory to container environment
 
 # Delete container
-docker ps                   # it will list all containers available in your computer, search the container you want to delete
-docker stop <cointainer_id> # before delete you should stop it
-docker rm <cointainer_id>   # now you can delete using the same ID
+docker ps                                 # list all containers available in your computer, search the container you want to delete
+docker stop <cointainer_id>               # before delete you should stop it
+docker rm <cointainer_id>                 # delete container using the same ID
 
 # Delete image
-docker images               # list all images available in your computer, search the image ID that you want to delete
-docker rmi <image_id>       # Delete the image
+docker images                             # list all images available in your computer, search the image ID that you want to delete
+docker rmi <image_id>                     # delete the image using the same ID
 
 # Delete all images and containers
 docker stop $(docker ps -a -q)            # stop all running containers 
