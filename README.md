@@ -6,12 +6,12 @@
 
 ## Where will you run the analysis?
 
-* [Personal computer with Linux](#linux-system-personal-computer)
+* [Personal computer with Linux](#personal-computer-with-linux)
 * [Personal computer with Windows]()
 * [Personal computer with Mac]()
-* [Cluster with Linux]()
+* [Cluster with Linux](#cluster-with-linux)
 
-## Linux system personal computer
+## Personal computer with Linux
 
 ### Genotype calls 
 
@@ -73,3 +73,11 @@ Keep this terminal open and search for `http://localhost:8787/` or `http://127.0
 ```{bash, eval=FALSE}
 
 ```
+
+## Cluster with Linux
+
+Docker require administrator permissions to run. Running your analysis in a cluster you may not have this permissions. Fortunately, [singularity](https://singularity.lbl.gov/) exists. This software allows you to use docker images without the need of administrator permissions. Most part of clusters already have singularity installed, but if not you should send a request to the cluster administrator to install it. This [information](https://singularity.lbl.gov/install-request) may help you to elaborate this request.
+
+
+
+
