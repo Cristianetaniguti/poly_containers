@@ -91,11 +91,24 @@ Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1
 
 **Download the container image:** open a terminal and run: `docker pull cristaniguti/poly_maphaplo`
 
-Then start the image by running the following commands:
+Then start the image by running the following commands (feel free to choose another port different than 8787):
 
 ```{bash, eval=FALSE}
-
+# Access the RStudio
+docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_maphaplo
 ```
+
+Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. Then, try to load any of the included packages:
+
+```{R, eval=FALSE}
+# Loading MAPpoly
+library(mappoly)
+plot(solcap.err.map[[1]])
+```
+
+![](./imgs/solcap.map1.png)
+
+If you see the same plot shown above, you are ready to go! We recommend that you go ahead and follow each package vignettes and examples on their respective web pages.
 
 **Warning:** container images can be large depending on their content. If you do not plan to use the images soon and want to free up some storage space, please open a terminal and run `rm -rf poly_maphaplo`.
 
@@ -116,10 +129,32 @@ Then start the image by running the following commands:
 
 **Download the container image:** open a terminal and run: `docker pull cristaniguti/poly_qtlmap`
 
-Then start the image by running the following commands:
+Then start the image by running the following commands (feel free to choose another port different than 8787):
 
 ```{bash, eval=FALSE}
-
+# Access the RStudio
+docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_qtlmap
 ```
+
+Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. Then, try to load any of the included packages:
+
+```{R, eval=FALSE}
+# Loading QTLpoly
+library(qtlpoly)
+load(pheno)
+head(pheno)
+```
+
+```{R, eval=FALSE}
+##              T32        T17        T45
+## Ind_1 -0.1698446 -0.9332320 -1.2259338
+## Ind_2  2.5319356  0.1997378 -1.8004184
+## Ind_3  1.3669074  1.0584794 -0.7980037
+## Ind_4  0.7955652 -1.7186921  1.5834176
+## Ind_5  1.3168502 -0.7119421  1.3099067
+## Ind_6 -0.8778211 -0.2339543 -0.6323779
+```
+
+If you see the same output show above, you are ready to go! We recommend that you go ahead and follow each package vignettes and examples on their respective web pages.
 
 **Warning:** container images can be large depending on their content. If you do not plan to use the images soon and want to free up some storage space, please open a terminal and run `rm -rf poly_qtlmap`.
