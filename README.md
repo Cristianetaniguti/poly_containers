@@ -79,17 +79,17 @@ docker rmi $(docker images -q)            # remove all images
 
 **Download the container image:** open a terminal and run: `docker pull cristaniguti/poly_genocalls`
 
-Then start the image by running the following commands:
+Then start the image by running the following commands (feel free to choose another port different than 8787):
 
 ```{bash, eval=FALSE}
 # Use VCF2SM
-docker run -v $(pwd):/opt cristaniguti/poly_genocalls python /scripts/vcf2sm/VCF2SM.py -i /opt/example.vcf -o /opt/NewPlusOldCalls.headed_poly.vcf -S /scripts/supermassa/src/SuperMASSA.py -I hw -a RA/AA -r 1:84 -d 15 -D 500 -M 4:6 -f 4 -p 0.80 -n 0.90 -c 0.75 -t 1
+docker run -v $(pwd):/opt cristaniguti/poly_genocalls python /scripts/VCF2SM.py -i /opt/example.vcf -o /opt/example_poly.vcf -S /scripts/SuperMASSA.py -I hw -a RA/AA -r 1:84 -d 15 -D 500 -M 4:6 -f 4 -p 0.80 -n 0.90 -c 0.75 -t 1
 
 # Access the RStudio
 docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_genocalls
 ```
 
-Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. Feel free to choose another port different than 8787. You can also run the VCF2SM using the RStudio terminal, but do not forget the path of the scripts inside the container: `/scripts/SuperMASSA.py` and `/scripts/VCF2SM.py`.
+Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. You can also run the VCF2SM using the RStudio terminal, but do not forget the path of the scripts inside the container: `/scripts/SuperMASSA.py` and `/scripts/VCF2SM.py`. If you want to load files or folders into the container, simply run the commands above from a directory containing them (you can use commands such as `cd` and `cd ..` to navigate through directories).
 
 **Warning:** container images can be large depending on their content. If you do not plan to use the images soon and want to free up some storage space, please see [Docker useful commands session](#docker-useful-commands) to remove them.
 
@@ -121,7 +121,7 @@ docker run -it -v $(pwd):/opt cristaniguti/poly_haplo /julia-1.5.3/bin/./julia
 docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_haplo
 ```
 
-Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser.  You can also run the Julia using the RStudio terminal, but do not forget the path of the script inside the container: `/julia-1.5.3/bin/./julia`. 
+Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. You can also run the Julia using the RStudio terminal, but do not forget the path of the script inside the container: `/julia-1.5.3/bin/./julia`. If you want to load files or folders into the container, simply run the commands above from a directory containing them (you can use commands such as `cd` and `cd ..` to navigate through directories).
 
 With RStudio, try to load any of the included R packages:
 
@@ -133,7 +133,7 @@ plot(solcap.err.map[[1]])
 
 ![](./imgs/solcap.map1.png)
 
-If you see the same plot shown above, you are ready to go! We recommend that you go ahead and follow each package vignettes and examples on their respective web pages.
+If you see the same plot shown above, you are ready to go! We recommend that you start by following the vignettes and examples for each package.
 
 **Warning:** container images can be large depending on their content. If you do not plan to use the images soon and want to free up some storage space, please see [Docker useful commands session](#docker-useful-commands) to remove them.
 
@@ -161,7 +161,9 @@ Then start the image by running the following commands (feel free to choose anot
 docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_qtlmap
 ```
 
-Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. Then, try to load any of the included packages:
+Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. If you want to load files or folders into the container, simply run the commands above from a directory containing them (you can use commands such as `cd` and `cd ..` to navigate through directories).
+
+Inside RStudio, try to load any of the included packages:
 
 ```{R, eval=FALSE}
 # Loading QTLpoly
@@ -180,7 +182,7 @@ head(pheno)
 ## Ind_6 -0.8778211 -0.2339543 -0.6323779
 ```
 
-If you see the same output show above, you are ready to go! We recommend that you go ahead and follow each package vignettes and examples on their respective web pages.
+If you see the output shown above, you are ready to go! We recommend that you start by following the vignettes and examples for each package.
 
 **Warning:** container images can be large depending on their content. If you do not plan to use the images soon and want to free up some storage space, please see [Docker useful commands session](#docker-useful-commands) to remove them.
 
