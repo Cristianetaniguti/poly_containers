@@ -81,7 +81,7 @@ docker rmi $(docker images -q)            # remove all images
 
 Then start the image by running the following commands (feel free to choose another port different than 8787):
 
-```{bash, eval=FALSE}
+```
 # Use VCF2SM
 docker run -v $(pwd):/opt cristaniguti/poly_genocalls python /scripts/VCF2SM.py -i /opt/example.vcf -o /opt/example_poly.vcf -S /scripts/SuperMASSA.py -I hw -a RA/AA -r 1:84 -d 15 -D 500 -M 4:6 -f 4 -p 0.80 -n 0.90 -c 0.75 -t 1
 
@@ -113,7 +113,7 @@ Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1
 
 Then start the image by running the following commands (feel free to choose another port different than 8787):
 
-```{bash, eval=FALSE}
+```
 # Access Julia with
 docker run -it -v $(pwd):/opt cristaniguti/poly_haplo /scripts/./julia
 
@@ -125,7 +125,7 @@ Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1
 
 With RStudio, try to load any of the included R packages:
 
-```{R, eval=FALSE}
+```
 # Loading MAPpoly
 library(mappoly)
 plot(solcap.err.map[[1]])
@@ -156,7 +156,7 @@ If you see the same plot shown above, you are ready to go! We recommend that you
 
 Then start the image by running the following commands (feel free to choose another port different than 8787):
 
-```{bash, eval=FALSE}
+```
 # Access the RStudio
 docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_qtl
 ```
@@ -165,14 +165,14 @@ Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1
 
 Inside RStudio, try to load any of the included packages:
 
-```{R, eval=FALSE}
+```
 # Loading QTLpoly
 library(qtlpoly)
 load(pheno)
 head(pheno)
 ```
 
-```{R, eval=FALSE}
+```
 ##              T32        T17        T45
 ## Ind_1 -0.1698446 -0.9332320 -1.2259338
 ## Ind_2  2.5319356  0.1997378 -1.8004184
