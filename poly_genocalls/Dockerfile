@@ -24,7 +24,6 @@ RUN apt install -y git wget \
     && mkdir /scripts \
     && cp supermassa/src/* /scripts \
     && cp vcf2sm/* /scripts \
-    && mkdir /opt \
     && cd /opt \
     && wget https://github.com/Cristianetaniguti/poly_containers/raw/master/poly_genocalls/subset.vcf
 
