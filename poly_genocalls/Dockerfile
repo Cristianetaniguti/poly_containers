@@ -25,4 +25,7 @@ RUN apt install -y git \
     && cp supermassa/src/* /scripts \
     && cp vcf2sm/* /scripts
 
-ENV PATH=/scripts:$PATH
+# It is not working - bugfix
+ENV PATH=/scripts:$PATH 
+
+COPY ./subset.vcf /opt

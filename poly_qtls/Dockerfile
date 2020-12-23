@@ -11,5 +11,3 @@ RUN R -e "install.packages('devtools', repos='http://brieger.esalq.usp.br/CRAN/'
           devtools::install_github('jendelman/diaQTL');\
           devtools::install_github('jendelman/GWASpoly');\
           install.packages('polyqtlR', repos='http://brieger.esalq.usp.br/CRAN/')"
-          
-COPY ./subset.vcf /opt

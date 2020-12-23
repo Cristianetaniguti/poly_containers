@@ -12,16 +12,16 @@ All images will run on top of your OS kernel, so they are cross-platform enabled
 
 * Self-contained images of the following software:
 
-    * [SuperMASSA/VCF2SM]()
-    * [polyRAD]()
-    * [fitPoly]()
-    * [MAPpoly]()
-    * [polymapR]()
-    * [PolyOrigin]()
-    * [QTLpoly]()
-    * [polyqtlR]()
-    * [diaQTL]()
-    * [GWASpoly]()
+    * [SuperMASSA/VCF2SM](https://github.com/guilherme-pereira/vcf2sm)
+    * [polyRAD](https://github.com/lvclark/polyRAD)
+    * [fitPoly](https://cran.r-project.org/web/packages/fitPoly/index.html)
+    * [MAPpoly](https://cran.r-project.org/web/packages/mappoly/index.html)
+    * [polymapR](https://cran.r-project.org/web/packages/polymapR/index.html)
+    * [PolyOrigin](https://github.com/chaozhi/PolyOrigin.jl)
+    * [QTLpoly](https://github.com/guilherme-pereira/QTLpoly)
+    * [polyqtlR](https://cran.r-project.org/web/packages/polyqtlR/index.html)
+    * [diaQTL](https://github.com/jendelman/diaQTL)
+    * [GWASpoly](https://github.com/jendelman/GWASpoly)
 
 ## Installing Docker
 
@@ -31,7 +31,7 @@ All images will run on top of your OS kernel, so they are cross-platform enabled
 
 **Mac users:** download the [Docker Desktop Installer for Mac](https://desktop.docker.com/mac/stable/Docker.dmg) and follow the [Installation instructions for Mac](https://docs.docker.com/docker-for-mac/install/).
 
-**Cluster users**: most computing clusters already have Docker or Singularity installed - you can jump to the next session, download and run the images. If your cluster does not have any image rendering system, please contact your system administrator. This [information](https://singularity.lbl.gov/install-request) may help you to elaborate a request. 
+**Cluster users**: most computing clusters already have Docker or Singularity installed - you can jump to the next session, download and run the images. If your cluster does not have any image rendering system, please contact your system administrator. This [information](https://singularity.lbl.gov/install-request) may help you to elaborate a request.
 
 Docker requires administrator permissions to run. If you do not have these permissions you can use [singularity](https://singularity.lbl.gov/). You can access [here](https://singularity.lbl.gov/docs-docker) some instruction about how to use docker images with singularity.
 
@@ -55,7 +55,7 @@ docker images                             # list all images available in your co
 docker rmi <image_id>                     # delete the image using the same ID
 
 # Delete all images and containers
-docker stop $(docker ps -a -q)            # stop all running containers 
+docker stop $(docker ps -a -q)            # stop all running containers
 docker rm $(docker ps -a -q)              # remove all stopped containers
 docker rmi $(docker images -q)            # remove all images
 ```
@@ -115,13 +115,13 @@ Then start the image by running the following commands (feel free to choose anot
 
 ```{bash, eval=FALSE}
 # Access Julia with
-docker run -it -v $(pwd):/opt cristaniguti/poly_haplo /julia-1.5.3/bin/./julia
+docker run -it -v $(pwd):/opt cristaniguti/poly_haplo /scripts/./julia
 
 # Access the RStudio
 docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_haplo
 ```
 
-Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. You can also run the Julia using the RStudio terminal, but do not forget the path of the script inside the container: `/julia-1.5.3/bin/./julia`. If you want to load files or folders into the container, simply run the commands above from a directory containing them (you can use commands such as `cd` and `cd ..` to navigate through directories).
+Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. You can also run the Julia using the RStudio terminal, but do not forget the path of the script inside the container: `/scripts/julia`. If you want to load files or folders into the container, simply run the commands above from a directory containing them (you can use commands such as `cd` and `cd ..` to navigate through directories).
 
 With RStudio, try to load any of the included R packages:
 
@@ -139,7 +139,7 @@ If you see the same plot shown above, you are ready to go! We recommend that you
 
 ## QTL mapping
 
-* Docker Hub image: [cristaniguti/poly_qtlmap](https://hub.docker.com/repository/docker/cristaniguti/poly_qtlmap)
+* Docker Hub image: [cristaniguti/poly_qtl](https://hub.docker.com/repository/docker/cristaniguti/poly_qtl)
 
 ### Image contents
 
@@ -152,13 +152,13 @@ If you see the same plot shown above, you are ready to go! We recommend that you
 
 ### Running instructions
 
-**Download the container image:** open a terminal and run: `docker pull cristaniguti/poly_qtlmap`
+**Download the container image:** open a terminal and run: `docker pull cristaniguti/poly_qtl`
 
 Then start the image by running the following commands (feel free to choose another port different than 8787):
 
 ```{bash, eval=FALSE}
 # Access the RStudio
-docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_qtlmap
+docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_qtl
 ```
 
 Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. If you want to load files or folders into the container, simply run the commands above from a directory containing them (you can use commands such as `cd` and `cd ..` to navigate through directories).
@@ -186,3 +186,6 @@ If you see the output shown above, you are ready to go! We recommend that you st
 
 **Warning:** container images can be large depending on their content. If you do not plan to use the images soon and want to free up some storage space, please see [Docker useful commands session](#docker-useful-commands) to remove them.
 
+## Help us to improve
+
+If you find any problem or want to add more software to the images, or even create a new one, feel free to send us messages, open issues or pull requests in the GitHub repository with the Dockerfiles. 
