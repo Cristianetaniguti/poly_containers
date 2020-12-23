@@ -83,7 +83,7 @@ Then start the image by running the following commands (feel free to choose anot
 
 ```
 # Use VCF2SM
-docker run -v $(pwd):/opt cristaniguti/poly_genocalls python /scripts/VCF2SM.py -i /opt/example.vcf -o /opt/example_poly.vcf -S /scripts/SuperMASSA.py -I hw -a RA/AA -r 1:84 -d 15 -D 500 -M 4:6 -f 4 -p 0.80 -n 0.90 -c 0.75 -t 1
+docker run -v $(pwd):/home/user/ cristaniguti/poly_genocalls python /scripts/VCF2SM.py -i /opt/subset.vcf -o /home/user/example_poly.vcf -S /scripts/SuperMASSA.py -I hw -a RA/AA -r 1:84 -d 15 -D 500 -M 4:6 -f 4 -p 0.80 -n 0.90 -c 0.75 -t 1
 
 # Access the RStudio
 docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_genocalls
