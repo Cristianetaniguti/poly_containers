@@ -1,4 +1,4 @@
-## Why should you use docker images?
+## Why should you use docker containers?
 
 * If you do not want to install all software needed for the Polyploid Training Workshop
 * You want to run every software via RStudio in your web browser
@@ -10,7 +10,7 @@ All images will run on top of your OS kernel, so they are cross-platform enabled
 
 * [Docker installation instructions](#installing-docker)
 
-* Self-contained images of the following software:
+* Images to run self-contained containers with the following software:
 
     * [SuperMASSA/VCF2SM](https://github.com/guilherme-pereira/vcf2sm)
     * [polyRAD](https://github.com/lvclark/polyRAD)
