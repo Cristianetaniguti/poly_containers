@@ -82,11 +82,17 @@ docker rmi $(docker images -q)            # remove all images
 Then start the image by running the following commands (feel free to choose another port different than 8787):
 
 ```
-# Use VCF2SM
+# Running VCF2SM (Linux/Mac)
 docker run -v $(pwd):/home/user/ cristaniguti/poly_genocalls python /scripts/VCF2SM.py -i /opt/subset.vcf -o /home/user/example_poly.vcf -S /scripts/SuperMASSA.py -I hw -a RA/AA -r 1:84 -d 15 -D 500 -M 4:6 -f 4 -p 0.80 -n 0.90 -c 0.75 -t 1
 
-# Access the RStudio
+# Running VCF2SM (Windows)
+docker run -v ${pwd}:/home/user/ cristaniguti/poly_genocalls python /scripts/VCF2SM.py -i /opt/subset.vcf -o /home/user/example_poly.vcf -S /scripts/SuperMASSA.py -I hw -a RA/AA -r 1:84 -d 15 -D 500 -M 4:6 -f 4 -p 0.80 -n 0.90 -c 0.75 -t 1
+
+# Access the RStudio (Linux/Mac)
 docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_genocalls
+
+# Access the RStudio (Windows)
+docker run -p 8787:8787 -v ${pwd}:/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_genocalls
 ```
 
 Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. You can also run the VCF2SM using the RStudio terminal, but do not forget the path of the scripts inside the container: `/scripts/SuperMASSA.py` and `/scripts/VCF2SM.py`. If you want to load files or folders into the container, simply run the commands above from a directory containing them (you can use commands such as `cd` and `cd ..` to navigate through directories).
@@ -116,11 +122,17 @@ Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1
 Then start the image by running the following commands (feel free to choose another port different than 8787):
 
 ```
-# Access Julia with
+# Running Julia (Linux/Mac)
 docker run -it -v $(pwd):/opt cristaniguti/poly_haplo /scripts/./julia
 
-# Access the RStudio
+# Running Julia (Windows)
+docker run -it -v ${pwd}:/opt cristaniguti/poly_haplo /scripts/./julia
+
+# Access the RStudio (Linux/Mac)
 docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_haplo
+
+# Access the RStudio (Windows)
+docker run -p 8787:8787 -v ${pwd}:/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_haplo
 ```
 
 Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. You can also run the Julia using the RStudio terminal, but do not forget the path of the script inside the container: `/scripts/julia`. If you want to load files or folders into the container, simply run the commands above from a directory containing them (you can use commands such as `cd` and `cd ..` to navigate through directories).
@@ -159,8 +171,11 @@ If you see the same plot shown above, you are ready to go! We recommend that you
 Then start the image by running the following commands (feel free to choose another port different than 8787):
 
 ```
-# Access the RStudio
+# Access the RStudio (Linux/Mac)
 docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_qtl
+
+# Access the RStudio (Windows)
+docker run -p 8787:8787 -v ${pwd}:/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/poly_qtl
 ```
 
 Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. If you want to load files or folders into the container, simply run the commands above from a directory containing them (you can use commands such as `cd` and `cd ..` to navigate through directories).
