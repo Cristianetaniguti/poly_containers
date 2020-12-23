@@ -1,8 +1,8 @@
-## Why should you use docker containers?
+## Why should you use these docker containers?
 
-* If you do not want to install all software needed for the Polyploid Training Workshop
-* You want to run every software via RStudio in your web browser
-* You want to use a cluster to run the analysis
+* If you do not want to install every software needed for the Polyploid Training Workshop
+* If you want to run every software via RStudio in your web browser
+* If you want to use a cluster to run the analysis
 
 All images will run on top of your OS kernel, so they are cross-platform enabled, do not need any configuration, and are ready to go.
 
@@ -31,9 +31,9 @@ All images will run on top of your OS kernel, so they are cross-platform enabled
 
 **Mac users:** download the [Docker Desktop Installer for Mac](https://desktop.docker.com/mac/stable/Docker.dmg) and follow the [Installation instructions for Mac](https://docs.docker.com/docker-for-mac/install/).
 
-**Cluster users**: most computing clusters already have Docker or Singularity installed - you can jump to the next session, download and run the images. If your cluster does not have any image rendering system, please contact your system administrator. This [information](https://singularity.lbl.gov/install-request) may help you to elaborate a request.
+**Cluster users**: most computing clusters already have Docker or Singularity installed - you can jump to the next session, download, and run the images. If your cluster does not have any image rendering system, please contact your system administrator. This [information](https://singularity.lbl.gov/install-request) may help you to elaborate a request.
 
-Docker requires administrator permissions to run. If you do not have these permissions you can use [singularity](https://singularity.lbl.gov/). You can access [here](https://singularity.lbl.gov/docs-docker) some instruction about how to use docker images with singularity.
+Docker requires administrator permissions to run. If you do not have these permissions you can use [singularity](https://singularity.lbl.gov/). You can access [here](https://singularity.lbl.gov/docs-docker) some instructions about how to use docker images with singularity.
 
 ## Docker useful commands
 
@@ -43,15 +43,15 @@ After installing docker here are some useful commands:
 # Dowload images and run containers
 docker pull                               # Get image from a registry
 docker run                                # run a command in a new container
-docker run -it -v                         # run in a interactive mode and transferring directory to container environment
+docker run -it -v                         # run in an interactive mode and transferring directory to the container environment
 
 # Delete container
-docker ps                                 # list all containers available in your computer, search the container you want to delete
+docker ps                                 # list all containers available on your computer, search the container you want to delete
 docker stop <cointainer_id>               # before delete you should stop it
 docker rm <cointainer_id>                 # delete container using the same ID
 
 # Delete image
-docker images                             # list all images available in your computer, search the image ID that you want to delete
+docker images                             # list all images available on your computer, search the image ID that you want to delete
 docker rmi <image_id>                     # delete the image using the same ID
 
 # Delete all images and containers
@@ -190,4 +190,4 @@ If you see the output shown above, you are ready to go! We recommend that you st
 
 ## Help us to improve
 
-If you find any problem or want to add more software to the images, or even create a new one, feel free to send us messages, open issues or pull requests in the GitHub repository with the Dockerfiles. 
+If you find any problem or want to add more software to the images, or even create a new one, feel free to send us messages, open issues, or pull requests. 
