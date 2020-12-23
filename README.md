@@ -27,13 +27,13 @@ All images will run on top of your OS kernel, so they are cross-platform enabled
 
 **Linux users:** use the following instructions to [Install Docker on Ubuntu](https://docs.docker.com/engine/install/ubuntu/), or find your distribution [here](https://docs.docker.com/engine/install/).
 
-**Windows users:** download the [Docker Desktop Installer for Windows](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe) and follow the [Installation instructions for Windows](https://docs.docker.com/docker-for-windows/install/).
-
 **Mac users:** download the [Docker Desktop Installer for Mac](https://desktop.docker.com/mac/stable/Docker.dmg) and follow the [Installation instructions for Mac](https://docs.docker.com/docker-for-mac/install/).
+
+**Windows users:** first, [install and configure Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps) (steps 1-5 only). Then, download the [Docker Desktop Installer for Windows](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe) and run it. Once the installation finishes, you will be able to open a Windows Powershell terminal and run the commands under the `Running instructions` sessions below. If you have any problem, please follow the [Installation instructions for Windows](https://docs.docker.com/docker-for-windows/install/) or ask for help on our Slack Channel.
 
 **Cluster users**: most computing clusters already have Docker or Singularity installed - you can jump to the next session, download, and run the images. If your cluster does not have any image rendering system, please contact your system administrator. This [information](https://singularity.lbl.gov/install-request) may help you to elaborate a request.
 
-Docker requires administrator permissions to run. If you do not have these permissions you can use [singularity](https://singularity.lbl.gov/). You can access [here](https://singularity.lbl.gov/docs-docker) some instructions about how to use docker images with singularity.
+Docker requires administrator permissions to run. If you do not have these permissions, you can use [Singularity](https://singularity.lbl.gov/). [Here are](https://singularity.lbl.gov/docs-docker) some instructions about how to use Docker images with Singularity.
 
 ## Docker useful commands
 
