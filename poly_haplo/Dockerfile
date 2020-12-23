@@ -8,7 +8,7 @@ RUN apt update \
     && ln -s /julia-1.5.3/bin/julia /scripts/julia
 
 # Include in path
-ENV PATH=/julia-1.5.3/bin:$PATH
+ENV PATH="/julia-1.5.3/bin:${PATH}"
 
 RUN julia -e 'using Pkg;pkg"add https://github.com/chaozhi/PolyOrigin.jl"'
 
