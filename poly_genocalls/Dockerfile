@@ -18,14 +18,13 @@ RUN R -e "install.packages('devtools', repos='http://brieger.esalq.usp.br/CRAN/'
           devtools::install_github('lvclark/polyRAD')"
 
 # Download supermassa and vcf2sm
-RUN apt install -y git \
+RUN apt install -y git wget \
     && git clone https://bitbucket.org/orserang/supermassa.git \
     && git clone https://github.com/guilherme-pereira/vcf2sm.git \
     && mkdir /scripts \
     && cp supermassa/src/* /scripts \
     && cp vcf2sm/* /scripts
+    && mkdir /opt \
+    && cd /opt \
+    && wget https://github.com/Cristianetaniguti/poly_containers/raw/master/poly_genocalls/subset.vcf
 
-# It is not working - bugfix
-ENV PATH=/scripts:$PATH 
-
-COPY ./subset.vcf /opt
