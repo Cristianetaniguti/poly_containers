@@ -64,7 +64,7 @@ docker rmi $(docker images -q)            # remove all images
 
 * Docker Hub image: [cristaniguti/poly_genocalls](https://hub.docker.com/repository/docker/cristaniguti/poly_genocalls)
 
-### Image contents
+<ins>**Image contents**</ins>
 
 * Ubuntu 20.04
 * R 4.0.3
@@ -75,7 +75,7 @@ docker rmi $(docker images -q)            # remove all images
 * polyRAD
 * fitPoly
 
-### Running instructions
+<ins>**Running instructions**</ins>
 
 **Download the container image:** open a terminal and run: `docker pull cristaniguti/poly_genocalls`
 
@@ -97,7 +97,8 @@ Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1
 
 * Docker Hub image: [cristaniguti/poly_haplo](https://hub.docker.com/repository/docker/cristaniguti/poly_haplo)
 
-### Image contents
+
+<ins>**Image contents**</ins>
 
 * Ubuntu 20.04
 * R 4.0.3
@@ -107,7 +108,8 @@ Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1
 * polymapR
 * PolyOrigin
 
-### Running instructions
+
+<ins>**Running instructions**</ins>
 
 **Download the container image:** open a terminal and run: `docker pull cristaniguti/poly_haplo`
 
@@ -141,7 +143,7 @@ If you see the same plot shown above, you are ready to go! We recommend that you
 
 * Docker Hub image: [cristaniguti/poly_qtl](https://hub.docker.com/repository/docker/cristaniguti/poly_qtl)
 
-### Image contents
+<ins>**Image contents**</ins>
 
 * Ubuntu 20.04
 * R 4.0.3
@@ -150,7 +152,7 @@ If you see the same plot shown above, you are ready to go! We recommend that you
 * diaQTL
 * GWASpoly
 
-### Running instructions
+<ins>**Running instructions**</ins>
 
 **Download the container image:** open a terminal and run: `docker pull cristaniguti/poly_qtl`
 
