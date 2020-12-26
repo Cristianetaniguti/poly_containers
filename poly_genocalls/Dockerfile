@@ -22,6 +22,11 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         libxml2-dev=2.9.10+dfsg-5 \
         libharfbuzz-dev=2.6.4-1ubuntu4 \
         libfribidi-dev=1.0.8-2 \
+        libfreetype6-dev=2.10.1-2ubuntu0.1 \
+        libpng-dev=1.6.37-2 \
+        libtiff5-dev=4.1.0+git191117-2build1 \
+        libjpeg-dev=8c-2ubuntu8 \
+        zlib1g-dev=1:1.2.11.dfsg-2ubuntu1.2 \
         python2=2.7.17-2ubuntu4 \
         python-tk=2.7.18-1 \
         python-is-python2=2.7.17-4 \
@@ -32,9 +37,12 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         numpy==1.16.6
 
 # Install R packages
-RUN install2.r --error --deps TRUE -r ${CRAN_REPO} \
-        remotes \
-        devtools \
-        fitPoly \
-        BiocManager \
-    && installGithub.r lvclark/polyRAD
+RUN install2.r --error --deps TRUE -r ${CRAN_REPO} -n 12 \
+        # remotes \
+        # devtools \
+        # fitPoly \
+        BiocStyle \
+        littler \
+        BiocManager
+
+RUN installGithub.r lvclark/polyRAD
