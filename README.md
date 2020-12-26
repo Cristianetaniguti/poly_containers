@@ -145,7 +145,7 @@ library(mappoly)
 plot(solcap.err.map[[1]])
 ```
 
-![](./imgs/solcap.map1.png)
+![image](https://user-images.githubusercontent.com/7572527/103160220-dc411100-47b0-11eb-806d-e3ed7f2c0d78.png)
 
 If you see the same plot shown above, you are ready to go! We recommend that you start by following the vignettes and examples for each package.
 

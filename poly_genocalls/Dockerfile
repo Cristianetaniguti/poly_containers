@@ -38,12 +38,14 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         numpy==1.16.6
 
 # Install R packages
-RUN install2.r --error --deps TRUE -r ${CRAN_REPO} -n ${R_THREADS} \
-        # remotes \
-        # devtools \
-        # fitPoly \
-        BiocStyle \
-        littler \
+RUN install2.r --error -r ${CRAN_REPO} -n ${R_THREADS} \
+        remotes \
+        fitPoly \
+	littler \
         BiocManager
+
+RUN  /usr/local/lib/R/site-library/littler/examples/installBioc.r \
+     pcaMethods \
+     BiocStyle
 
 RUN installGithub.r lvclark/polyRAD
