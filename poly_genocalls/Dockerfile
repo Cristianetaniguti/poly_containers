@@ -9,13 +9,13 @@ RUN apt-get update \
     && ln -s /usr/bin/python2 /usr/bin/python
 
 # Install R packages
-RUN apt install -y libgit2-dev libfontconfig1-dev libxml2-dev libharfbuzz-dev libfribidi-dev
+RUN apt install -y libgit2-dev libfontconfig1-dev libxml2-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 
 RUN R -e "install.packages('devtools', repos='http://brieger.esalq.usp.br/CRAN/', dependencies=T);\
           install.packages('fitPoly', repos='http://brieger.esalq.usp.br/CRAN/', dependencies=T);\
           install.packages('BiocManager', repos='http://brieger.esalq.usp.br/CRAN/'); \
           BiocManager::install('pcaMethods');\
-          devtools::install_github('lvclark/polyRAD')"
+          devtools::install_github('lvclark/polyRAD' )"
 
 # Download supermassa and vcf2sm
 RUN apt install -y git wget \
