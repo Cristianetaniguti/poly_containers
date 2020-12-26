@@ -13,6 +13,7 @@ COPY --from=downloads /subset.vcf /opt/
 COPY --from=downloads /get-pip.py /
 ENV PATH="/scripts:${PATH}"
 ARG CRAN_REPO=https://packagemanager.rstudio.com/all/__linux__/focal/latest
+ARG R_THREADS=4
 
 # Installing python2 and matplotlib for supermassa
 RUN apt-get update && apt-get install --no-install-recommends -y \
@@ -37,7 +38,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         numpy==1.16.6
 
 # Install R packages
-RUN install2.r --error --deps TRUE -r ${CRAN_REPO} -n 12 \
+RUN install2.r --error --deps TRUE -r ${CRAN_REPO} -n ${R_THREADS} \
         # remotes \
         # devtools \
         # fitPoly \
