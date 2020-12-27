@@ -41,7 +41,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN install2.r --error -r ${CRAN_REPO} -n ${R_THREADS} \
         remotes \
         fitPoly \
-	    littler \
+        littler \
         BiocManager
 
 RUN  /usr/local/lib/R/site-library/littler/examples/installBioc.r \
