@@ -97,6 +97,13 @@ docker run -p 8787:8787 -v ${pwd}:/home/rstudio/ -e DISABLE_AUTH=true cristanigu
 
 Keep this terminal open and access `http://localhost:8787/` or `http://127.0.0.1:8787/` in your web browser. You can also run the VCF2SM using the RStudio terminal, but do not forget the path of the scripts inside the container: `/scripts/SuperMASSA.py` and `/scripts/VCF2SM.py`. If you want to load files or folders into the container, simply run the commands above from a directory containing them (you can use commands such as `cd` and `cd ..` to navigate through directories).
 
+**Attention:** If running on Windows PowerShell probably your default path is `C:\WINDOWS\system32` and your output files can be written on it. For example, running the `VCF2SM` command shown above, the output `example_poly.vcf` will be found at that path. If you want to change the directory, please use `cd`, as shown before. Here we show a simple example:
+
+* Change the directory to the *Documents* folder of your user: `cd C:\Users\YOURUSER\Documents`
+* Create a directory for the first day of the Polyploid Training Workshop: `mkdir PTWD1`
+* Access the folder: `cd .\PTWD1`
+* If you run the docker command for `VCF2SM`, you will find the output within this folder. 
+
 **Warning:** container images can be large depending on their content. If you do not plan to use the images soon and want to free up some storage space, please see [Docker useful commands session](#docker-useful-commands) to remove them.
 
 ## Linkage Mapping and Haplotype Reconstruction
