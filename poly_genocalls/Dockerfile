@@ -28,6 +28,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         libtiff5-dev=4.1.0+git191117-2build1 \
         libjpeg-dev=8c-2ubuntu8 \
         zlib1g-dev=1:1.2.11.dfsg-2ubuntu1.2 \
+	libbz2-dev \
+	libcurl4-openssl-dev \
         python2=2.7.17-2ubuntu4 \
         python-tk=2.7.18-1 \
         python-is-python2=2.7.17-4 \
@@ -42,10 +44,12 @@ RUN install2.r --error -r ${CRAN_REPO} -n ${R_THREADS} \
         remotes \
         fitPoly \
         littler \
-        BiocManager
+        BiocManager \
+	qqman
 
 RUN  /usr/local/lib/R/site-library/littler/examples/installBioc.r \
      pcaMethods \
-     BiocStyle
+     BiocStyle \
+     VariantAnnotation
 
 RUN installGithub.r lvclark/polyRAD
