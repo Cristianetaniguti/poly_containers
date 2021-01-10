@@ -27,6 +27,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         libpng-dev=1.6.37-2 \
         libtiff5-dev=4.1.0+git191117-2build1 \
         libjpeg-dev=8c-2ubuntu8 \
+	littler \
         zlib1g-dev=1:1.2.11.dfsg-2ubuntu1.2 \
 	libbz2-dev \
 	libcurl4-openssl-dev \
@@ -47,9 +48,8 @@ RUN install2.r --error -r ${CRAN_REPO} -n ${R_THREADS} \
         BiocManager \
 	qqman
 
-RUN  /usr/local/lib/R/site-library/littler/examples/installBioc.r \
-     pcaMethods \
-     BiocStyle \
-     VariantAnnotation
+RUN /usr/local/lib/R/site-library/littler/examples/installBioc.r pcaMethods \
+    								 BiocStyle \
+								 VariantAnnotation
 
 RUN installGithub.r lvclark/polyRAD
