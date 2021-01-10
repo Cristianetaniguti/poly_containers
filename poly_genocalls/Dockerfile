@@ -46,12 +46,13 @@ RUN install2.r --error -r ${CRAN_REPO} -n ${R_THREADS} \
         fitPoly \
         littler \
         BiocManager \
-	qqman
+	qqman \
+	devtools 
 
-# installBioc.r not working
+# installBioc.r and installGithub.r not working in docker hub
 
 RUN R -e "BiocManager::install('pcaMethods');\
-   	  BiocManager::install('BiocStyle');\
-	  BiocManager::install('VariantAnnotation')"
+          BiocManager::install('BiocStyle');\
+          BiocManager::install('VariantAnnotation')"
 
-RUN installGithub.r lvclark/polyRAD
+RUN R -e "devtools::install_github('lvclark/polyRAD')"
