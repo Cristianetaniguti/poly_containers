@@ -48,8 +48,10 @@ RUN install2.r --error -r ${CRAN_REPO} -n ${R_THREADS} \
         BiocManager \
 	qqman
 
-RUN /usr/local/lib/R/site-library/littler/examples/installBioc.r pcaMethods \
-    								 BiocStyle \
-								 VariantAnnotation
+# installBioc.r not working
+
+RUN R -e "BiocManager::install('pcaMethods');\
+   	  BiocManager::install('BiocStyle');\
+	  BiocManager::install('VariantAnnotation')"
 
 RUN installGithub.r lvclark/polyRAD
