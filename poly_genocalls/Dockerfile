@@ -1,5 +1,5 @@
 FROM alpine:20201218 as downloads
-RUN apk add --no-cache git=2.29.2-r wget=1.20.3-r2 \
+RUN apk add --no-cache git=2.30.0-r0 wget=1.21.1-r0 \
     && git clone https://bitbucket.org/orserang/supermassa.git \
     && git clone https://github.com/guilherme-pereira/vcf2sm.git \
     && wget https://github.com/Cristianetaniguti/poly_containers/raw/master/poly_genocalls/subset.vcf \
